@@ -1,4 +1,4 @@
-(def project 'plot)
+(def project 'archiet/mmih.plot)
 (def version "0.1.0-SNAPSHOT")
 
 (set-env! :resource-paths #{"resources" "src"}
@@ -7,16 +7,14 @@
                             [adzerk/boot-test "RELEASE" :scope "test"]])
 
 (task-options!
- aot {:namespace   #{'plot.core}}
+ aot {:namespace   #{'archiet/mmih.plot.core}}
  pom {:project     project
       :version     version
-      :description "FIXME: write description"
-      :url         "http://example/FIXME"
-      :scm         {:url "https://github.com/yourname/plot"}
-      :license     {"Eclipse Public License"
-                    "http://www.eclipse.org/legal/epl-v10.html"}}
- jar {:main        'plot.core
-      :file        (str "plot-" version "-standalone.jar")})
+      :description "plotting data from mmih"
+      :url         "http://github.com/ArchieT/miscale-manual-input-helper"
+      :scm         {:url "https://github.com/ArchieT/miscale-manual-input-helper"}
+ jar {:main        'archiet/mmih.plot.core
+      :file        (str "plot-mmih-" version "-standalone.jar")})
 
 (deftask build
   "Build the project locally as a JAR."
