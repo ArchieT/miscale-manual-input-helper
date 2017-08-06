@@ -207,7 +207,7 @@ func Przerob(input []string) (output []string) {
 func main() {
 
 	reader := bufio.NewReader(os.Stdin)
-	f, err := os.OpenFile("thisfilewillbeoverwrittenbymmih.csv", os.O_WRONLY|os.O_CREATE, 0600)
+	f, err := os.OpenFile("themmihappendshere.csv", os.O_WRONLY|os.O_APPEND, 0600)
 	c := csv.NewWriter(f)
 	c.Write(pola)
 	if err != nil {
