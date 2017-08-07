@@ -3,8 +3,11 @@
 
 (set-env! :resource-paths #{"resources" "src"}
           :source-paths   #{"test"}
-          :dependencies   '[[org.clojure/clojure "RELEASE"]
-                            [adzerk/boot-test "RELEASE" :scope "test"]])
+          :dependencies   '[[org.clojure/clojure "1.9.0-alpha17"]
+                            [adzerk/boot-test "RELEASE" :scope "test"]
+                            [com.hypirion/clj-xchart "0.2.0"]
+                            ;;[org.clojure/tools.cli "0.3.5"]
+                            [org.clojure/data.csv "0.1.4"]])
 
 (task-options!
  aot {:namespace   #{'archiet/mmih.plot.core}}
@@ -12,7 +15,7 @@
       :version     version
       :description "plotting data from mmih"
       :url         "http://github.com/ArchieT/miscale-manual-input-helper"
-      :scm         {:url "https://github.com/ArchieT/miscale-manual-input-helper"}
+      :scm         {:url "https://github.com/ArchieT/miscale-manual-input-helper"}}
  jar {:main        'archiet/mmih.plot.core
       :file        (str "plot-mmih-" version "-standalone.jar")})
 
